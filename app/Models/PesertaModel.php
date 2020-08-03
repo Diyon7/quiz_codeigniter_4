@@ -50,7 +50,6 @@ class PesertaModel extends Model
             ->orderBy('answer_cso_teams.quiz_cso_id', 'ASC')
             ->get()
             ->getResultArray();
-        // SELECT COUNT(*) FROM answer_cso_teams JOIN quiz_csos ON quiz_csos.id=answer_cso_teams.quiz_cso_id AND answer_cso_teams.team_id='$data_id' AND answer_cso_teams.answer_key=quiz_csos.answer_key ORDER BY answer_cso_teams.quiz_cso_id
     }
     public function nilaipesertas()
     {
