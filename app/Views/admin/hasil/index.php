@@ -27,20 +27,22 @@
                             </thead>
                             <tbody>
                                 <?php
-                                foreach ($nilai as $n) :
-                                    var_dump($n);
-                                    foreach ($hasil as $h) :
-                                        if ($n->team_id == $h['id']) : ?>
-                                            <tr>
-                                                <td><?= $h['id'] ?></td>
-                                                <td><?= $h['name'] ?></td>
-                                                <td><?= $h['school_name'] ?></td>
-                                                <td><?= $h['email'] ?></td>
-                                                <td><?= $n->team_id ?></td>
-                                            </tr>
-                                <?php
-                                        endif;
+                                foreach ($hasil as $n) :
+                                    foreach ($nilaib as $h) :
+                                        dd($h['team_id']);
                                     endforeach;
+                                    foreach ($nilais as $ns) :
+                                    endforeach;
+                                ?>
+                                    <tr>
+                                        <a href=""></a>
+                                        <td><?= $n['id'] ?></td>
+                                        <td><?= $n['name'] ?></td>
+                                        <td><?= $n['school_name'] ?></td>
+                                        <td><?= $n['email'] ?></td>
+                                        <td><a href="<?= base_url('admin/' . $n['id']) ?>" class="btn btn-primary">Detail</a></td>
+                                    </tr>
+                                <?php
                                 endforeach;
                                 ?>
                             </tbody>

@@ -44,8 +44,8 @@
                                         <td><?= $s['multiple_choice_5'] ?></td>
                                         <td><?= $s['answer_key'] ?></td>
                                         <td>
-                                            <a href="<?= base_url('admin/soal/edit/' . $s['id']) ?>" class="btn btn-block btn-warning btn-sm">Edit</a>
-                                            <a href="<?= base_url('admin/soal/delete/' . $s['id']) ?>" class="btn btn-block btn-danger btn-sm" onclick="return confirm('yakin ?');">Delete</a>
+                                            <a href="<?= base_url('admin/soal/edit/' . $s['id']) ?>" class="btn btn-block btn-warning btn-sm"><i class="fas fa-edit"></i></a>
+                                            <a href="<?= base_url('admin/soal/delete/' . $s['id']) ?>" class="btn btn-block btn-danger btn-sm" onclick="return confirm('yakin ?');"><i class="fas fa-trash-alt"></i></a>
                                         </td>
                                     </tr>
                                 <?php

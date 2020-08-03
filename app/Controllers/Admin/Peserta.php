@@ -19,13 +19,16 @@ class Peserta extends BaseController
     {
         helper('security');
         $hasil = $this->PesertaModel->get_peserta();
-        $nilai = $this->PesertaModel->nilaipeserta();
-        // var_dump($nilai);
+        $nilaib =
+            $this->PesertaModel->nilaipesertab();
+        // $nilais = $this->PesertaModel->nilaipesertas();
+        // dd($nilaib);
         $data = [
             'title' => 'Admin 💻🙂📱 Dashboard',
             'letak' => 'Dashboard',
             'hasil' => $hasil,
-            'nilai' => $nilai,
+            'nilaib' => $nilaib,
+            // 'nilais' => $nilais,
         ];
 
         return view('admin/hasil/index', $data);
