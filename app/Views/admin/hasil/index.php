@@ -15,7 +15,7 @@
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
-                        <table id="example1" class="table table-bordered table-striped">
+                        <table id="detail_hasil" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
                                     <th>Id</th>
@@ -28,11 +28,6 @@
                             <tbody>
                                 <?php
                                 foreach ($hasil as $n) :
-                                    foreach ($nilaib as $h) :
-                                        dd($h['team_id']);
-                                    endforeach;
-                                    foreach ($nilais as $ns) :
-                                    endforeach;
                                 ?>
                                     <tr>
                                         <a href=""></a>
@@ -63,5 +58,68 @@
     </div>
 </div>
 </div>
+
+<script type="text/javascript">
+    var table;
+
+    $(document).ready(function() {
+
+        ajaxcsrf();
+
+        table = $("#detail_hasil").DataTable({
+            initComplete: function() {
+                var api = this.api();
+                $('#detail_hasil_filter input')
+                    .off('.DT')
+                    .on('keyup.DT', function(e) {
+                        api.search(this.value).draw();
+                    });
+            },
+            oLanguage: {
+                sProcessing: "loading..."
+            },
+            processing: true,
+            serverSide: true,
+            ajax: {
+                "url": base_url + "hasilujian/NilaiMhs/" + id,
+                "type": "POST",
+            },
+            columns: [{
+                    "data": "id",
+                    "orderable": false,
+                    "searchable": false
+                },
+                {
+                    "data": 'nama'
+                },
+                {
+                    "data": 'nama_kelas'
+                },
+                {
+                    "data": 'nama_jurusan'
+                },
+                {
+                    "data": 'jml_benar'
+                },
+                {
+                    "data": 'nilai'
+                },
+            ],
+            order: [
+                [1, 'asc']
+            ],
+            rowId: function(a) {
+                return a;
+            },
+            rowCallback: function(row, data, iDisplayIndex) {
+                var info = this.fnPagingInfo();
+                var page = info.iPage;
+                var length = info.iLength;
+                var index = page * length + (iDisplayIndex + 1);
+                $('td:eq(0)', row).html(index);
+            }
+        });
+    });
+</script>
 
 <?= $this->endSection() ?>

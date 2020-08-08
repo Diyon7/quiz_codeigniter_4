@@ -13,7 +13,9 @@ class Auth extends BaseController
         helper(['form', 'url']);
         $teamModel = new TeamModel();
 
-        $data = ['title' => 'Login'];
+        $data = [
+            'title' => 'Login',
+        ];
 
         if ($this->request->getMethod() == 'post') {
             // rules validation

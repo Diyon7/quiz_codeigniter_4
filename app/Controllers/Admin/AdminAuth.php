@@ -13,7 +13,22 @@ class AdminAuth extends BaseController
         helper(['form', 'url']);
         $AdminModel = new AdminModel();
 
-        $data = ['title' => 'Admin :) Login'];
+        $data = [
+            'title' => 'Admin :) Login',
+            'email' => [
+                'name' => 'email',
+                'type' => 'email',
+                'placeholder' => 'Email',
+                'class' => 'form-control',
+                'autocomplete' => 'off'
+            ],
+            'password' => [
+                'name' => 'password',
+                'type' => 'password',
+                'placeholder' => 'Password',
+                'class' => 'form-control'
+            ]
+        ];
 
         if ($this->request->getMethod() == 'post') {
             // rules validation

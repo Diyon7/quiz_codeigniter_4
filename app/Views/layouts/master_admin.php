@@ -48,8 +48,6 @@
 
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
-                <!-- Messages Dropdown Menu -->
-                <!-- Notifications Dropdown Menu -->
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
                         <span class="dropdown-item dropdown-header bg-light"><?= $_SESSION['emaila'] ?></span>
@@ -208,13 +206,8 @@
             <aside class="control-sidebar control-sidebar-dark">
             </aside>
         </div>
-        <!-- ./wrapper -->
-
-        <!-- jQuery -->
         <script src="/assets/plugins/jquery/jquery.min.js"></script>
-        <!-- jQuery UI 1.11.4 -->
         <script src="/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
-        <!-- SweetAlert2 -->
         <script src="/assets/plugins/sweetalert2/sweetalert2.min.js"></script>
         <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
         <script>
@@ -222,16 +215,10 @@
         </script>
         <script src="/assets/plugins/datatables/jquery.dataTables.js"></script>
         <script src="/assets/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
-        <!-- Bootstrap 4 -->
         <script src="/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <!-- ChartJS -->
-        <script src="/assets/plugins/chart.js/Chart.min.js"></script>
-        <!-- Sparkline -->
         <!-- <script src="/assets/plugins/sparklines/sparkline.js"></script> -->
-        <!-- JQVMap -->
         <script src="/assets/plugins/jqvmap/jquery.vmap.min.js"></script>
         <script src="/assets/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
-        <!-- jQuery Knob Chart -->
         <script src="/assets/plugins/jquery-knob/jquery.knob.min.js"></script>
         <!-- daterangepicker -->
         <script src="/assets/plugins/moment/moment.min.js"></script>
@@ -250,9 +237,9 @@
         <script src=""></script>
         <!-- AdminLTE for demo purposes -->
         <script src="/assets/dist/js/demo.js"></script>
-        <script>
+        <script type="text/javascript">
             $(function() {
-                $("#example1").DataTable();
+                $("#example1").DataTable({});
                 // $('#example2').DataTable({
                 //     "paging": true,
                 //     "lengthChange": false,

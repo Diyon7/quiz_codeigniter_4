@@ -53,6 +53,7 @@ $routes->group('admin', ['filter' => 'cekloginadmin'], function ($routes) {
 
 	//hasil peserta
 	$routes->add('peserta', 'Admin/Peserta::index');
+	$routes->add('get_hasil', 'Admin/Peserta::get_hasil');
 	$routes->add('peserta/detail', 'Admin/Peserta::Detail');
 });
 
