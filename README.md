@@ -11,3 +11,5 @@ database.default.DBDriver = MySQLi
 
 ubah juga
 app.baseURL
+
+untuk database masih meyusul
